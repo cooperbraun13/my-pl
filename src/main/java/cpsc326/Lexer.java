@@ -22,8 +22,20 @@ class Lexer {
   static {
     keywords = new HashMap<>();
     keywords.put("and", AND);
-    // TODO: add keywrods
-
+    keywords.put("or", OR);
+    keywords.put("struct", STRUCT);
+    keywords.put("else", ELSE);
+    keywords.put("false", FALSE);
+    keywords.put("true", TRUE);
+    keywords.put("for", FOR);
+    keywords.put("fun", FUN);
+    keywords.put("if", IF);
+    keywords.put("nil", NIL);
+    keywords.put("print", PRINT);
+    keywords.put("return", RETURN);
+    keywords.put("this", THIS);
+    keywords.put("while", WHILE);
+    keywords.put("var", VAR);
   }
 
   List<Token> scanTokens() {
@@ -99,6 +111,41 @@ class Lexer {
   }
 
   private void scanToken() {
-    // TODO: implement scanToken()
+    char character = advance();
+    switch (character) {
+      case '(':
+        addToken(LEFT_PAREN);
+        break;
+      case ')':
+        addToken(RIGHT_PAREN);
+        break;
+      case '{':
+        addToken(LEFT_BRACE);
+        break;
+      case '}':
+        addToken(RIGHT_BRACE);
+        break;
+      case ',':
+        addToken(COMMA);
+        break;
+      case '.':
+        addToken(DOT);
+        break;
+      case '+':
+        addToken(PLUS);
+        break;
+      case '-':
+        addToken(MINUS);
+        break;
+      case '*':
+        addToken(STAR);
+        break;
+      case '/':
+        addToken(SLASH);
+        break;
+      case ';':
+        addToken(SEMICOLON);
+        break;
+    }
   }
 }

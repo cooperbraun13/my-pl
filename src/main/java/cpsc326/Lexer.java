@@ -127,7 +127,12 @@ class Lexer {
   }
 
   private void identifier() {
-    // TODO: implement identifier()
+    while (isAlphaNumeric(peek())) {
+      advance();
+    }
+    String text = source.substring(start, current);
+    TokenType type = keywords.getOrDefault(text, IDENTIFIER);
+    addToken(type);
   }
 
   private void scanToken() {
@@ -214,6 +219,8 @@ class Lexer {
       default:
         if (isDigit(character)) {
           number();
+        } else if (isAlpha(character)) {
+          identifier();
         }
     }
   }

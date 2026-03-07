@@ -106,7 +106,7 @@ class Lexer {
       advance();
     }
     if (isAtEnd()) {
-      System.err.println("Reached end of input without finding a closing quote");
+      OurPL.error(line, "Unterminated string.");
     } else {
       advance();
       addToken(STRING, source.substring(start + 1, current - 1));
@@ -221,6 +221,8 @@ class Lexer {
           number();
         } else if (isAlpha(character)) {
           identifier();
+        } else {
+          OurPL.error(line, "Unexpected character.");
         }
     }
   }

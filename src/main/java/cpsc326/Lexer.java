@@ -99,7 +99,18 @@ class Lexer {
   }
 
   private void string() {
-    // TODO: implement string()
+    while (!isAtEnd() && peek() != '"') {
+      if (peek() == '\n') {
+        line++;
+      }
+      advance();
+    }
+    if (isAtEnd()) {
+      System.err.println("Reached end of input without finding a closing quote");
+    } else {
+      advance();
+      addToken(STRING, source.substring(start + 1, current - 1));
+    }
   }
 
   private void number() {

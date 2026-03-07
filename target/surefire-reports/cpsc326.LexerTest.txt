@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: cpsc326.LexerTest
 -------------------------------------------------------------------------------
-Tests run: 61, Failures: 36, Errors: 0, Skipped: 0, Time elapsed: 0.063 s <<< FAILURE! -- in cpsc326.LexerTest
-cpsc326.LexerTest.commentOnlyInputProducesOnlyEof -- Time elapsed: 0.013 s
+Tests run: 61, Failures: 34, Errors: 0, Skipped: 0, Time elapsed: 0.069 s <<< FAILURE! -- in cpsc326.LexerTest
+cpsc326.LexerTest.commentOnlyInputProducesOnlyEof -- Time elapsed: 0.014 s
 cpsc326.LexerTest.decimalEdgeCasesMatchCurrentImplementation -- Time elapsed: 0.003 s <<< FAILURE!
 org.opentest4j.AssertionFailedError: expected: <8> but was: <5>
 	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
@@ -16,7 +16,7 @@ org.opentest4j.AssertionFailedError: expected: <8> but was: <5>
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
 
-cpsc326.LexerTest.underscoreCannotStartIdentifierInCurrentLexer -- Time elapsed: 0.002 s <<< FAILURE!
+cpsc326.LexerTest.underscoreCannotStartIdentifierInCurrentLexer -- Time elapsed: 0.001 s <<< FAILURE!
 org.opentest4j.AssertionFailedError: expected: <true> but was: <false>
 	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
 	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
@@ -29,8 +29,8 @@ org.opentest4j.AssertionFailedError: expected: <true> but was: <false>
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
 
-cpsc326.LexerTest.bangToken -- Time elapsed: 0 s
-cpsc326.LexerTest.unterminatedStringReportsErrorAndStillEndsWithEof -- Time elapsed: 0 s <<< FAILURE!
+cpsc326.LexerTest.bangToken -- Time elapsed: 0.001 s
+cpsc326.LexerTest.unterminatedStringReportsErrorAndStillEndsWithEof -- Time elapsed: 0.001 s <<< FAILURE!
 org.opentest4j.AssertionFailedError: expected: <true> but was: <false>
 	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
 	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
@@ -43,9 +43,9 @@ org.opentest4j.AssertionFailedError: expected: <true> but was: <false>
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
 
-cpsc326.LexerTest.bangEqualToken -- Time elapsed: 0 s
-cpsc326.LexerTest.rightParenToken -- Time elapsed: 0.001 s
-cpsc326.LexerTest.complexProgramTokenization -- Time elapsed: 0.001 s <<< FAILURE!
+cpsc326.LexerTest.bangEqualToken -- Time elapsed: 0.001 s
+cpsc326.LexerTest.rightParenToken -- Time elapsed: 0 s
+cpsc326.LexerTest.complexProgramTokenization -- Time elapsed: 0 s <<< FAILURE!
 org.opentest4j.AssertionFailedError: expected: <8> but was: <3>
 	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
 	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
@@ -58,19 +58,7 @@ org.opentest4j.AssertionFailedError: expected: <8> but was: <3>
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
 
-cpsc326.LexerTest.stringToken -- Time elapsed: 0.001 s <<< FAILURE!
-org.opentest4j.AssertionFailedError: expected: <2> but was: <1>
-	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
-	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
-	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
-	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:150)
-	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:145)
-	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:531)
-	at cpsc326.LexerTest.stringToken(LexerTest.java:190)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
-
+cpsc326.LexerTest.stringToken -- Time elapsed: 0.001 s
 cpsc326.LexerTest.returnToken -- Time elapsed: 0.001 s <<< FAILURE!
 org.opentest4j.AssertionFailedError: expected: <2> but was: <1>
 	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
@@ -86,7 +74,7 @@ org.opentest4j.AssertionFailedError: expected: <2> but was: <1>
 
 cpsc326.LexerTest.plusToken -- Time elapsed: 0 s
 cpsc326.LexerTest.greaterToken -- Time elapsed: 0.001 s
-cpsc326.LexerTest.varToken -- Time elapsed: 0 s <<< FAILURE!
+cpsc326.LexerTest.varToken -- Time elapsed: 0.001 s <<< FAILURE!
 org.opentest4j.AssertionFailedError: expected: <2> but was: <1>
 	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
 	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
@@ -112,9 +100,9 @@ org.opentest4j.AssertionFailedError: expected: <2> but was: <1>
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
 
-cpsc326.LexerTest.rightBraceToken -- Time elapsed: 0.001 s
-cpsc326.LexerTest.doubleCharacterOperatorMatchingIsGreedy -- Time elapsed: 0 s
-cpsc326.LexerTest.elseToken -- Time elapsed: 0.001 s <<< FAILURE!
+cpsc326.LexerTest.rightBraceToken -- Time elapsed: 0 s
+cpsc326.LexerTest.doubleCharacterOperatorMatchingIsGreedy -- Time elapsed: 0.001 s
+cpsc326.LexerTest.elseToken -- Time elapsed: 0 s <<< FAILURE!
 org.opentest4j.AssertionFailedError: expected: <2> but was: <1>
 	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
 	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
@@ -153,7 +141,7 @@ org.opentest4j.AssertionFailedError: expected: <2> but was: <1>
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
 
-cpsc326.LexerTest.identifierMayContainDigitsAfterFirstCharacter -- Time elapsed: 0.001 s <<< FAILURE!
+cpsc326.LexerTest.identifierMayContainDigitsAfterFirstCharacter -- Time elapsed: 0 s <<< FAILURE!
 org.opentest4j.AssertionFailedError: expected: <2> but was: <1>
 	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
 	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
@@ -166,7 +154,7 @@ org.opentest4j.AssertionFailedError: expected: <2> but was: <1>
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
 
-cpsc326.LexerTest.thisToken -- Time elapsed: 0 s <<< FAILURE!
+cpsc326.LexerTest.thisToken -- Time elapsed: 0.001 s <<< FAILURE!
 org.opentest4j.AssertionFailedError: expected: <2> but was: <1>
 	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
 	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
@@ -179,7 +167,7 @@ org.opentest4j.AssertionFailedError: expected: <2> but was: <1>
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
 
-cpsc326.LexerTest.unterminatedMultilineStringReportsFinalLineAndStillEndsWithEof -- Time elapsed: 0 s <<< FAILURE!
+cpsc326.LexerTest.unterminatedMultilineStringReportsFinalLineAndStillEndsWithEof -- Time elapsed: 0.001 s <<< FAILURE!
 org.opentest4j.AssertionFailedError: expected: <true> but was: <false>
 	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
 	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
@@ -192,7 +180,7 @@ org.opentest4j.AssertionFailedError: expected: <true> but was: <false>
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
 
-cpsc326.LexerTest.splitOperatorsWithWhitespaceStaySeparate -- Time elapsed: 0.001 s
+cpsc326.LexerTest.splitOperatorsWithWhitespaceStaySeparate -- Time elapsed: 0 s
 cpsc326.LexerTest.eofTokenOnEmptyInput -- Time elapsed: 0 s
 cpsc326.LexerTest.commentAtEndOfFileWithoutTrailingNewlineIsSkipped -- Time elapsed: 0.001 s <<< FAILURE!
 org.opentest4j.AssertionFailedError: expected: <4> but was: <2>
@@ -208,20 +196,8 @@ org.opentest4j.AssertionFailedError: expected: <4> but was: <2>
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
 
 cpsc326.LexerTest.greaterEqualToken -- Time elapsed: 0 s
-cpsc326.LexerTest.hashInsideStringDoesNotStartComment -- Time elapsed: 0.001 s <<< FAILURE!
-org.opentest4j.AssertionFailedError: expected: <2> but was: <1>
-	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
-	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
-	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
-	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:150)
-	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:145)
-	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:531)
-	at cpsc326.LexerTest.hashInsideStringDoesNotStartComment(LexerTest.java:412)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
-
-cpsc326.LexerTest.printToken -- Time elapsed: 0 s <<< FAILURE!
+cpsc326.LexerTest.hashInsideStringDoesNotStartComment -- Time elapsed: 0 s
+cpsc326.LexerTest.printToken -- Time elapsed: 0.001 s <<< FAILURE!
 org.opentest4j.AssertionFailedError: expected: <2> but was: <1>
 	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
 	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
@@ -235,7 +211,7 @@ org.opentest4j.AssertionFailedError: expected: <2> but was: <1>
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
 
 cpsc326.LexerTest.multilineStringAdvancesLineCounter -- Time elapsed: 0 s <<< FAILURE!
-org.opentest4j.AssertionFailedError: expected: <3> but was: <1>
+org.opentest4j.AssertionFailedError: expected: <3> but was: <2>
 	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
 	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
 	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
@@ -247,7 +223,7 @@ org.opentest4j.AssertionFailedError: expected: <3> but was: <1>
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
 
-cpsc326.LexerTest.nilToken -- Time elapsed: 0.001 s <<< FAILURE!
+cpsc326.LexerTest.nilToken -- Time elapsed: 0 s <<< FAILURE!
 org.opentest4j.AssertionFailedError: expected: <2> but was: <1>
 	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
 	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
@@ -262,7 +238,7 @@ org.opentest4j.AssertionFailedError: expected: <2> but was: <1>
 
 cpsc326.LexerTest.lessToken -- Time elapsed: 0 s
 cpsc326.LexerTest.equalToken -- Time elapsed: 0 s
-cpsc326.LexerTest.forToken -- Time elapsed: 0 s <<< FAILURE!
+cpsc326.LexerTest.forToken -- Time elapsed: 0.001 s <<< FAILURE!
 org.opentest4j.AssertionFailedError: expected: <2> but was: <1>
 	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
 	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
@@ -307,7 +283,7 @@ org.opentest4j.AssertionFailedError: expected: <true> but was: <false>
 
 cpsc326.LexerTest.slashSlashIsTwoSlashTokensNotAComment -- Time elapsed: 0 s
 cpsc326.LexerTest.commentsAndWhitespaceAreSkipped -- Time elapsed: 0 s <<< FAILURE!
-org.opentest4j.AssertionFailedError: expected: <9> but was: <3>
+org.opentest4j.AssertionFailedError: expected: <9> but was: <4>
 	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
 	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
 	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
@@ -321,7 +297,7 @@ org.opentest4j.AssertionFailedError: expected: <9> but was: <3>
 
 cpsc326.LexerTest.lessEqualToken -- Time elapsed: 0 s
 cpsc326.LexerTest.dotToken -- Time elapsed: 0 s
-cpsc326.LexerTest.trueToken -- Time elapsed: 0.001 s <<< FAILURE!
+cpsc326.LexerTest.trueToken -- Time elapsed: 0 s <<< FAILURE!
 org.opentest4j.AssertionFailedError: expected: <2> but was: <1>
 	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
 	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
@@ -334,7 +310,7 @@ org.opentest4j.AssertionFailedError: expected: <2> but was: <1>
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
 
-cpsc326.LexerTest.funToken -- Time elapsed: 0 s <<< FAILURE!
+cpsc326.LexerTest.funToken -- Time elapsed: 0.001 s <<< FAILURE!
 org.opentest4j.AssertionFailedError: expected: <2> but was: <1>
 	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
 	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
@@ -348,7 +324,7 @@ org.opentest4j.AssertionFailedError: expected: <2> but was: <1>
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
 
 cpsc326.LexerTest.leftParenToken -- Time elapsed: 0 s
-cpsc326.LexerTest.structToken -- Time elapsed: 0 s <<< FAILURE!
+cpsc326.LexerTest.structToken -- Time elapsed: 0.001 s <<< FAILURE!
 org.opentest4j.AssertionFailedError: expected: <2> but was: <1>
 	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
 	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
@@ -362,7 +338,7 @@ org.opentest4j.AssertionFailedError: expected: <2> but was: <1>
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
 
 cpsc326.LexerTest.whitespaceOnlyInputProducesOnlyEof -- Time elapsed: 0 s
-cpsc326.LexerTest.numberFollowedByLettersSplitsIntoNumberAndIdentifier -- Time elapsed: 0 s <<< FAILURE!
+cpsc326.LexerTest.numberFollowedByLettersSplitsIntoNumberAndIdentifier -- Time elapsed: 0.001 s <<< FAILURE!
 org.opentest4j.AssertionFailedError: expected: <3> but was: <1>
 	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
 	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
@@ -375,7 +351,7 @@ org.opentest4j.AssertionFailedError: expected: <3> but was: <1>
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
 
-cpsc326.LexerTest.uppercaseLettersAreAcceptedInIdentifiers -- Time elapsed: 0 s <<< FAILURE!
+cpsc326.LexerTest.uppercaseLettersAreAcceptedInIdentifiers -- Time elapsed: 0.001 s <<< FAILURE!
 org.opentest4j.AssertionFailedError: expected: <2> but was: <1>
 	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
 	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
@@ -388,7 +364,7 @@ org.opentest4j.AssertionFailedError: expected: <2> but was: <1>
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
 
-cpsc326.LexerTest.uppercaseKeywordLikeIdentifierRemainsIdentifier -- Time elapsed: 0.001 s <<< FAILURE!
+cpsc326.LexerTest.uppercaseKeywordLikeIdentifierRemainsIdentifier -- Time elapsed: 0 s <<< FAILURE!
 org.opentest4j.AssertionFailedError: expected: <2> but was: <1>
 	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
 	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
@@ -414,7 +390,7 @@ org.opentest4j.AssertionFailedError: expected: <2> but was: <1>
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
 
-cpsc326.LexerTest.commentThenNewlineTracksNextLineCorrectly -- Time elapsed: 0.001 s <<< FAILURE!
+cpsc326.LexerTest.commentThenNewlineTracksNextLineCorrectly -- Time elapsed: 0 s <<< FAILURE!
 org.opentest4j.AssertionFailedError: expected: <2> but was: <1>
 	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
 	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
@@ -440,7 +416,7 @@ org.opentest4j.AssertionFailedError: expected: <2> but was: <1>
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
 
-cpsc326.LexerTest.identifierMayContainUnderscoreAfterFirstCharacter -- Time elapsed: 0.001 s <<< FAILURE!
+cpsc326.LexerTest.identifierMayContainUnderscoreAfterFirstCharacter -- Time elapsed: 0 s <<< FAILURE!
 org.opentest4j.AssertionFailedError: expected: <2> but was: <1>
 	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
 	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
@@ -453,7 +429,7 @@ org.opentest4j.AssertionFailedError: expected: <2> but was: <1>
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
 
-cpsc326.LexerTest.minusToken -- Time elapsed: 0 s
+cpsc326.LexerTest.minusToken -- Time elapsed: 0.001 s
 cpsc326.LexerTest.identifiersThatContainKeywordsRemainIdentifiers -- Time elapsed: 0 s <<< FAILURE!
 org.opentest4j.AssertionFailedError: expected: <2> but was: <1>
 	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
@@ -467,7 +443,7 @@ org.opentest4j.AssertionFailedError: expected: <2> but was: <1>
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
 
-cpsc326.LexerTest.equalEqualToken -- Time elapsed: 0 s
+cpsc326.LexerTest.equalEqualToken -- Time elapsed: 0.001 s
 cpsc326.LexerTest.leftBraceToken -- Time elapsed: 0 s
 cpsc326.LexerTest.multilineInputTracksLineNumbers -- Time elapsed: 0.001 s <<< FAILURE!
 org.opentest4j.AssertionFailedError: expected: <10> but was: <4>
@@ -495,4 +471,4 @@ org.opentest4j.AssertionFailedError: expected: <2> but was: <1>
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
 
-cpsc326.LexerTest.starToken -- Time elapsed: 0.001 s
+cpsc326.LexerTest.starToken -- Time elapsed: 0 s

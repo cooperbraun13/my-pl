@@ -114,7 +114,16 @@ class Lexer {
   }
 
   private void number() {
-    // TODO: implement number()
+    while (isDigit(peek())) {
+      advance();
+    }
+    if (peek() == '.' && isDigit(peekNext())) {
+      advance();
+      while (isDigit(peek())) {
+        advance();
+      }
+    }
+    addToken(NUMBER, Double.parseDouble(source.substring(start, current)));
   }
 
   private void identifier() {
@@ -202,6 +211,10 @@ class Lexer {
       case '"':
         string();
         break;
+      default:
+        if (isDigit(character)) {
+          number();
+        }
     }
   }
 }

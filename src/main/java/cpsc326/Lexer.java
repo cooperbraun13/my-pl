@@ -146,6 +146,51 @@ class Lexer {
       case ';':
         addToken(SEMICOLON);
         break;
+      case '!':
+        if (match('=')) {
+          addToken(BANG_EQUAL);
+        } else {
+          addToken(BANG);
+        }
+        break;
+      case '=':
+        if (match('=')) {
+          addToken(EQUAL_EQUAL);
+        } else {
+          addToken(EQUAL);
+        }
+        break;
+      case '<':
+        if (match('=')) {
+          addToken(LESS_EQUAL);
+        } else {
+          addToken(LESS);
+        }
+        break;
+      case '>':
+        if (match('=')) {
+          addToken(GREATER_EQUAL);
+        } else {
+          addToken(GREATER);
+        }
+        break;
+      case '#':
+        while (!isAtEnd() && peek() != '\n') {
+          advance();
+        }
+        break;
+      case ' ':
+        break;
+      case '\t':
+        break;
+      case '\r':
+        break;
+      case '\n':
+        line++;
+        break;
+      case '"':
+        string();
+        break;
     }
   }
 }

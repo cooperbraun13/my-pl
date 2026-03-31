@@ -29,23 +29,47 @@ abstract class Expr {
   }
 
   static class Binary extends Expr {
-    Binary(Expr Left, Token Operator, Expr Right) {
-      // TODO complete class
+    Binary(Expr left, Token operator, Expr right) {
+      this.left = left;
+      this.operator = operator;
+      this.right = right;
     }
+
+    final Expr left;
+    final Token operator;
+    final Expr right;
 
     @Override
     <R> R accept(Visitor<R> visitor) {
       return visitor.visitBinaryExpr(this);
     }
-    // TODO complete class
+
   }
 
   static class Grouping extends Expr {
-    // TODO complete class
+    Grouping(Expr expression) {
+      this.expression = expression;
+    }
+
+    final Expr expression;
+
+    @Override
+    <R> R accept(Visitor<R> visitor) {
+      return visitor.visitGroupingExpr(this);
+    }
   }
 
   static class Literal extends Expr {
-    // TODO complete class
+    Literal(Object value) {
+      this.value = value;
+    }
+
+    final Object value;
+
+    @Override
+    <R> R accept(Visitor<R> visitor) {
+      return visitor.visitLiteralExpr(this);
+    }
   }
 
   abstract <R> R accept(Visitor<R> visitor);

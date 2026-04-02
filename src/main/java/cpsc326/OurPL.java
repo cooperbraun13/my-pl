@@ -30,6 +30,7 @@ public class OurPL {
   }
 
   static boolean hadError = false;
+  static boolean hadRuntimeError = false;
 
   public static void runPrompt() throws IOException {
     InputStreamReader input = new InputStreamReader(System.in);
@@ -46,13 +47,18 @@ public class OurPL {
     }
   }
 
+  private static final Interpreter interpreter = new Interpreter();
+
   public static void run(String source) {
     Lexer lexer = new Lexer(source);
     List<Token> tokens = lexer.scanTokens();
 
-    for (Token token : tokens) {
-      System.out.println(token);
-    }
+    Parser parser = new Parser(tokens);
+    Expr expression = parser.parse();
+
+    if (hadError) return;
+
+    interpreter.interpret(expression);
   }
 
   static void error(int line, String message) {
@@ -62,5 +68,18 @@ public class OurPL {
   private static void report(int line, String where, String message) {
     System.err.println("[line " + line + "] Error" + where + ": " + message);
     hadError = true;
+  }
+
+  static void error(Token token, String message) {
+    if (token.type == TokenType.EOF) {
+      report(token.line, " at end", message);
+    } else {
+      report(token.line, " at '" + token.lexeme + "'", message);
+    }
+  }
+
+  static void runtimeError(RuntimeError error) {
+    System.err.println(error.getMessage() + "\n[line " + error.token.line + "]");
+    hadRuntimeError = true;
   }
 }

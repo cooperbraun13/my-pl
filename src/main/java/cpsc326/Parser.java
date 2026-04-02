@@ -107,9 +107,10 @@ class Parser {
 
     if (match(LEFT_PAREN)) {
       Expr expr = expression();
-      consume(RIGHT_BRACE, "Expect ')' after expression");
+      consume(RIGHT_PAREN, "Expect ')' after expression");
       return new Expr.Grouping(expr);
     }
+
     throw error(peek(), "Expect expression.");
   }
 
@@ -136,9 +137,11 @@ class Parser {
 
   private void synchronize() {
     advance();
+
     while (!isAtEnd()) {
       if (previous().type == SEMICOLON)
         return;
+
       switch (peek().type) {
         case STRUCT:
         case FOR:
@@ -150,6 +153,7 @@ class Parser {
         case WHILE:
           return;
       }
+
       advance();
     }
   }

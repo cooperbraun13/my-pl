@@ -23,31 +23,93 @@ class Parser {
   }
 
   private Expr expression() {
-    // TODO complete function
+    return equality();
   }
 
   private Expr equality() {
-    // TODO complete function
+    // equality -> comparison ( ( "!=" | "==" ) comparison )*
+    Expr expr = comparison();
+
+    while (match(BANG_EQUAL, EQUAL_EQUAL)) {
+      Token operator = previous();
+      Expr right = comparison();
+      expr = new Expr.Binary(expr, operator, right);
+    }
+
+    return expr;
   }
 
   private Expr comparison() {
-    // TODO complete function
+    // comparison -> term ( ( ">" | ">=" | "<" | "<=" ) term )*
+    Expr expr = term();
+
+    while (match(GREATER, GREATER_EQUAL, LESS, LESS_EQUAL)) {
+      Token operator = previous();
+      Expr right = term();
+      expr = new Expr.Binary(expr, operator, right);
+    }
+
+    return expr;
   }
 
   private Expr term() {
-    // TODO complete function
+    // term -> factor ( ( "-" | "+" ) factor )*
+    Expr expr = factor();
+
+    while (match(MINUS, PLUS)) {
+      Token operator = previous();
+      Expr right = factor();
+      expr = new Expr.Binary(expr, operator, right);
+    }
+
+    return expr;
   }
 
   private Expr factor() {
-    // TODO complete function
+    // factor -> unary ( ( "/" | "*" ) unary )*
+    Expr expr = unary();
+
+    while (match(SLASH, STAR)) {
+      Token operator = previous();
+      Expr right = unary();
+      expr = new Expr.Binary(expr, operator, right);
+    }
+
+    return expr;
   }
 
   private Expr unary() {
-    // TODO complete function
+    // unary -> ( "!" | "-") unary | primary
+    if (match(BANG, MINUS)) {
+      Token operator = previous();
+      Expr right = primary();
+      return new Expr.Unary(operator, right);
+    }
+
+    return primary();
   }
 
   private Expr primary() {
-    // TODO complete function
+    // primary -> NUMBER | STRING | "true" | "false" | "nil" | "(" expression ")"
+    if (match(FALSE)) {
+      return new Expr.Literal(false);
+    }
+    if (match(TRUE)) {
+      return new Expr.Literal(true);
+    }
+    if (match(NIL)) {
+      return new Expr.Literal(null);
+    }
+
+    if (match(NUMBER, STRING)) {
+      return new Expr.Literal(previous().literal);
+    }
+
+    if (match(LEFT_PAREN)) {
+      Expr expr = expression();
+      consume(RIGHT_BRACE, "Expect ')' after expression");
+      return new Expr.Grouping(expr);
+    }
     throw error(peek(), "Expect expression.");
   }
 

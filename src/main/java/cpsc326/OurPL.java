@@ -9,6 +9,10 @@ import java.nio.file.Paths;
 import java.util.List;
 
 public class OurPL {
+  private static final Interpreter interpreter = new Interpreter();
+
+  static boolean hadError = false;
+  static boolean hadRuntimeError = false;
 
   public static void main(String[] args) throws IOException {
     if (args.length > 1) {
@@ -27,10 +31,9 @@ public class OurPL {
 
     if (hadError)
       System.exit(65);
+    if (hadRuntimeError)
+      System.exit(70);
   }
-
-  static boolean hadError = false;
-  static boolean hadRuntimeError = false;
 
   public static void runPrompt() throws IOException {
     InputStreamReader input = new InputStreamReader(System.in);
@@ -47,8 +50,6 @@ public class OurPL {
     }
   }
 
-  private static final Interpreter interpreter = new Interpreter();
-
   public static void run(String source) {
     Lexer lexer = new Lexer(source);
     List<Token> tokens = lexer.scanTokens();
@@ -56,7 +57,8 @@ public class OurPL {
     Parser parser = new Parser(tokens);
     Expr expression = parser.parse();
 
-    if (hadError) return;
+    if (hadError)
+      return;
 
     interpreter.interpret(expression);
   }

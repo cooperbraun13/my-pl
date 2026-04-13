@@ -3,6 +3,8 @@
 /Users/cooperbraun/Desktop/workspace/github.com/school/cpsc326/ourpl/src/main/java/cpsc326/Interpreter.java
 /Users/cooperbraun/Desktop/workspace/github.com/school/cpsc326/ourpl/src/main/java/cpsc326/Lexer.java
 /Users/cooperbraun/Desktop/workspace/github.com/school/cpsc326/ourpl/src/main/java/cpsc326/OurPL.java
+/Users/cooperbraun/Desktop/workspace/github.com/school/cpsc326/ourpl/src/main/java/cpsc326/Parser.java
 /Users/cooperbraun/Desktop/workspace/github.com/school/cpsc326/ourpl/src/main/java/cpsc326/RuntimeError.java
+/Users/cooperbraun/Desktop/workspace/github.com/school/cpsc326/ourpl/src/main/java/cpsc326/Stmt.java
 /Users/cooperbraun/Desktop/workspace/github.com/school/cpsc326/ourpl/src/main/java/cpsc326/Token.java
 /Users/cooperbraun/Desktop/workspace/github.com/school/cpsc326/ourpl/src/main/java/cpsc326/TokenType.java

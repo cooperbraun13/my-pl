@@ -1,11 +1,11 @@
 package cpsc326;
 
+import static cpsc326.TokenType.*;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
-import static cpsc326.TokenType.*;
 
 class Lexer {
   private final String source;
@@ -100,9 +100,9 @@ class Lexer {
 
   private void string() {
     while (!isAtEnd() && peek() != '"') {
-      if (peek() == '\n') {
+      if (peek() == '\n')
         line++;
-      }
+
       advance();
     }
     if (isAtEnd()) {

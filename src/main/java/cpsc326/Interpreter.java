@@ -25,12 +25,14 @@ class Interpreter implements Expr.Visitor<Object>, Stmt.Visitor<Void> {
     Object left = evaluate(expr.left);
 
     if (expr.operator.type == TokenType.OR) {
-      if (isTruthy(left)) return left;
+      if (isTruthy(left))
+        return left;
     } else {
-      if (!isTruthy(left)) return left;
+      if (!isTruthy(left))
+        return left;
     }
 
-    return evaluate(expr.right)
+    return evaluate(expr.right);
   }
 
   @Override
@@ -151,11 +153,6 @@ class Interpreter implements Expr.Visitor<Object>, Stmt.Visitor<Void> {
     Object value = evaluate(expr.value);
     environment.assign(expr.name, value);
     return value;
-  }
-
-  @Override
-  public Void visitWhileStmt(Stmt.While stmt) {
-
   }
 
   private Object evaluate(Expr expr) {

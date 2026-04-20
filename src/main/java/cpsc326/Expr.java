@@ -104,9 +104,9 @@ abstract class Expr {
   }
 
   static class Logical extends Expr {
-    Logical(Expr left, Token keyword, Expr right) {
+    Logical(Expr left, Token operator, Expr right) {
       this.left = left;
-      this.keyword = keyword;
+      this.operator = operator;
       this.right = right;
     }
 
@@ -116,7 +116,7 @@ abstract class Expr {
     }
 
     final Expr left;
-    final Token keyword;
+    final Token operator;
     final Expr right;
   }
 

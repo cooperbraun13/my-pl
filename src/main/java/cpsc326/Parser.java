@@ -256,7 +256,7 @@ class Parser {
     // unary -> ( "!" | "-") unary | primary
     if (match(BANG, MINUS)) {
       Token operator = previous();
-      Expr right = primary();
+      Expr right = unary();
       return new Expr.Unary(operator, right);
     }
 
